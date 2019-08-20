@@ -1,4 +1,11 @@
 body {
+    display: grid;
+    grid-template-columns: 2fr 8fr
+}
+
+
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
