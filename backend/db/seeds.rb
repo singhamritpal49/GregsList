@@ -16,3 +16,4 @@ require 'faker'
     location: Faker::Address.city
     )
 end
+
