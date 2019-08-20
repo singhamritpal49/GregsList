@@ -16,3 +16,12 @@ require 'faker'
     location: Faker::Address.city
     )
 end
+
+Item.create(name: 'Balenciaga shoes', description: 'really nice shoes', price: '400', image: "https://n.nordstrommedia.com/id/sr3/4b7773f8-a5e2-448d-a4b7-dd2a17f2f5b7.jpeg?crop=pad&pad_color=FFF&format=jpeg&trim=color&trimcolor=FFF&w=780&h=838&dpr=2",
+category: "Fashion")
+Item.create(name: 'Iphone 5', description: 'Great condition', price: '350', image: "https://banner2.kisspng.com/20180711/lzw/kisspng-iphone-6-plus-iphone-5s-gold-phone-png-5b46604621eda0.496203361531338822139.jpg",
+category: "Technology")
+Item.create(name: 'Apple TV', description: 'open box', price: '99', image: "https://banner2.kisspng.com/20180705/uhl/kisspng-apple-tv-4th-generation-television-apple-tv-4k-apple-tv-5b3e985ab48655.0055958615308288907394.jpg",
+category: "Technology")
+Item.create(name: 'Leonardo DiCaprio Painting', description: 'A painting xxxxxxxxx', price: '35', image: "https://cdn.shopify.com/s/files/1/1944/7205/products/invincible_large.jpg",
+category: "Art")
