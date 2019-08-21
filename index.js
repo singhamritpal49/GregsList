@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderItem(items) {
         items.forEach(function (item) {
             ul.innerHTML += `
-        <li class="itemLi" data-id=${item.id}> ${item.name}</li>`
+        <li id="item-${item.id}" class="itemLi" data-id=${item.id}>${item.name}</li>`
         })
     }
     ul.addEventListener('click', () => {
@@ -30,23 +30,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(res => res.json())
                 .then(function (userData) {
                     // console.log(userData)
-
-
                     const showDiv = document.getElementById("showItem")
                     showDiv.innerHTML =
-                        `
-            <h3>Item Title: ${item.name} </h3>
-            <h3>Description: ${item.description} </h3>
-            <h3> 💰Price: $${item.price} </h3>
-            <div> <img src="${item.image}" height="480" width="480" >   </div>
-            <h3>Posted By: ${userData.name}</h3>
-            `
+                    `
+                    <h3>Item Title: ${item.name} </h3>
+                    <h3>Description: ${item.description} </h3>
+                    <h3> 💰Price: $${item.price} </h3>
+                    <div> <img src="${item.image}" height="300" width="300" >   </div>
+                    <h3>Posted By: ${userData.name}</h3>
+                    <button type="button" id="updateButton">Update</button>
+                    <button type="button" id="deleteButton">Delete</button>
+                    `
                 })
+                ///////////////DELETE///////////////
+                .then(function(){
+                //////////////delete on the database//////////////
+                    const deleteButton = document.getElementById('deleteButton')
+                    deleteButton.addEventListener('click', () => {
+                        fetch(`http://localhost:3000/items/${item.id}`,{
+                        method:'DELETE'
+                        })
+                        ////////////delete on the page////////////
+                        .then(res => res.json())
+                        .then(function(item){
+                            const theLi = document.getElementById(`item-${item.id}`)
+                            // console.log(theLi)
+                            theLi.remove()
+                            const showDiv = document.getElementById("showItem")
+                            showDiv.remove()
+                        })
+                    })
+                    
+                })
+                ///////////UPDATE//////////////////
+                // .then(function(){
+                //     const updateButton = document.getElementById('updateButton')
+                    
+                // })         
         }
-
     })
-
 })
+////////////UPDATE/////////////
+
+
+/////////////ADD///////////////
 const addListForm = document.querySelector('.add-list-form')
 // console.log(addListForm)
 addListForm.addEventListener('submit', () => {
@@ -65,12 +92,17 @@ addListForm.addEventListener('submit', () => {
             image: `${event.target.image.value}`,
             category: `${event.target.category.value}`,
             user_id: 1
-
         })
     })
         .then(res => res.json())
-        .then(response => console.log(response))
+        .then(function(item){
+            console.log(item)
+            ul.innerHTML += 
+            `
+            <li id="item-${item.id}" class="itemLi" data-id=${item.id}>${item.name}</li>
+            `
+           
+
+        })
     //.then(json => console.log(json))
-
-
 })
