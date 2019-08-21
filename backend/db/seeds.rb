@@ -25,6 +25,6 @@ Item.create(name: 'Iphone 5', description: 'Great condition', price: '350', imag
 category: "Technology",user_id: 5)
 Item.create(name: 'Apple TV', description: 'open box', price: '99', image: "https://banner2.kisspng.com/20180705/uhl/kisspng-apple-tv-4th-generation-television-apple-tv-4k-apple-tv-5b3e985ab48655.0055958615308288907394.jpg",
 category: "Technology",user_id: 1)
-Item.create(name: 'Leonardo DiCaprio Painting', description: 'A painting xxxxxxxxx', price: '35', image: "https://cdn.shopify.com/s/files/1/1944/7205/products/invincible_large.jpg",
+Item.create(name: 'Leonardo DiCaprio Painting', description: 'A painting', price: '35', image: "https://cdn.shopify.com/s/files/1/1944/7205/products/invincible_large.jpg",
 category: "Art",user_id: 8)
 
