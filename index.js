@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             // console.log(theLi)
                             theLi.remove()
                             const showDiv = document.getElementById("showItem")
-                            showDiv.remove()
+                            showDiv.innerHTML = ""
+                            
                         })
                     })
                     
