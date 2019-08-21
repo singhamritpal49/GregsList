@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h3>Item Title: ${item.name} </h3>
             <h3>Description: ${item.description} </h3>
             <h3> 💰Price: $${item.price} </h3>
-<<<<<<< HEAD
-            <img src="${item.image}">
-=======
             <div> <img src="${item.image}" height="480" width="480" >   </div>
->>>>>>> 33a45e357d9812b5771d3af6ec13bde72b1a2227
             <h3>Posted By: ${userData.name}</h3>
             `
                 })
