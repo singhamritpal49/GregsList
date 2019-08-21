@@ -3,13 +3,10 @@
     grid-template-columns: 2fr 8fr
 }
 
-#showItem {
-    width: 25%;
-    height: 25%;
+#container {
+    width: 200px;
+    height: 120px;
 }
-
-/* .picture {
-    /* max-width:100%; */
 
 
 
@@ -40,4 +37,8 @@
     margin-left:-6vh;
     transform-origin: 50% 100%;
     background: white;
+}
+
+#welcome {
+    font-family: 'Nothing You Could Do'
 }

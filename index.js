@@ -27,23 +27,54 @@ document.addEventListener("DOMContentLoaded", function () {
         function showItem(item) {
             const user = `http://localhost:3000/users/${item.user_id}`
             fetch(user)
-            .then(res => res.json())
-            .then(function(userData) {
-            // console.log(userData)
+                .then(res => res.json())
+                .then(function (userData) {
+                    // console.log(userData)
 
-            
-            const showDiv = document.getElementById("showItem")
-            showDiv.innerHTML =
-            `
+
+                    const showDiv = document.getElementById("showItem")
+                    showDiv.innerHTML =
+                        `
             <h3>Item Title: ${item.name} </h3>
             <h3>Description: ${item.description} </h3>
             <h3> 💰Price: $${item.price} </h3>
+<<<<<<< HEAD
             <img src="${item.image}">
+=======
+            <div> <img src="${item.image}" height="480" width="480" >   </div>
+>>>>>>> 33a45e357d9812b5771d3af6ec13bde72b1a2227
             <h3>Posted By: ${userData.name}</h3>
             `
-            })
+                })
         }
 
     })
+
+})
+const addListForm = document.querySelector('.add-list-form')
+// console.log(addListForm)
+addListForm.addEventListener('submit', () => {
+    event.preventDefault()
+    // console.log(event.target)
+    fetch("http://localhost:3000/items", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: `${event.target.name.value}`,
+            description: `${event.target.description.value}`,
+            price: `${event.target.price.value}`,
+            image: `${event.target.image.value}`,
+            category: `${event.target.category.value}`,
+            user_id: 1
+
+        })
+    })
+        .then(res => res.json())
+        .then(response => console.log(response))
+    //.then(json => console.log(json))
+
 
 })
