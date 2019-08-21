@@ -3,6 +3,11 @@
     grid-template-columns: 2fr 8fr
 }
 
+#container {
+    width: 200px;
+    height: 120px;
+}
+
 
 
 #crazyClock {
@@ -32,4 +37,8 @@
     margin-left:-6vh;
     transform-origin: 50% 100%;
     background: white;
+}
+
+#welcome {
+    font-family: 'Nothing You Could Do'
 }
