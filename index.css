@@ -3,6 +3,14 @@
     grid-template-columns: 2fr 8fr
 }
 
+#showItem {
+    width: 25%;
+    height: 25%;
+}
+
+/* .picture {
+    /* max-width:100%; */
+
 
 
 #crazyClock {
