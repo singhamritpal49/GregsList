@@ -66,5 +66,8 @@
   },
   "umd:main": "lib/anime.min.js",
   "umd:name": "anime",
-  "version": "3.1.0"
+  "version": "3.1.0",
+  "dependencies": {
+    "hover.css": "^2.3.2"
+  }
 }

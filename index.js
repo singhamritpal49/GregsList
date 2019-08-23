@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderItem(items) {
         items.forEach(function (item) {
             ul.innerHTML += `
-        <li id="item-${item.id}" class="itemLi" data-id=${item.id}>${item.name}</li>`
+        <li id="item-${item.id}" class="itemLi " data-id=${item.id}>${item.name}</li>`
         })
     }
     ul.addEventListener('click', () => {
@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const showDiv = document.getElementById("showItem")
                     showDiv.innerHTML =
                     `
-                    <h3>Item Title: ${item.name} </h3>
-                    <h3>Description: ${item.description} </h3>
-                    <h3> 💰Price: $${item.price} </h3>
+                    <h4> Title: ${item.name} </h4>
+                    <h6>Description: ${item.description} </h6>
+                    <h6> Price: $${item.price} </h6>
                     <div> <img src="${item.image}" height="300" width="300" >   </div>
-                    <h3>Posted By: ${userData.name}</h3>
-                    <button type="button" id="updateButton">Update</button>
+                    <p>Posted By: ${userData.name}</p>
+                    <button type="button" id="updateButton" class="buttonfx curtaindown">Update</button>
                     <button type="button" id="deleteButton">Delete</button>
                     `
                 })
@@ -106,4 +106,6 @@ addListForm.addEventListener('submit', () => {
 
         })
     //.then(json => console.log(json))
+    addListForm.reset()
+
 })
