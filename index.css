@@ -3,13 +3,13 @@
 } */
 
 .grid {
-    display: grid;
-    grid-template-columns: 2fr 8fr
+  display: grid;
+  grid-template-columns: 2fr 8fr;
 }
 
 #container {
-    width: 200px;
-    height: 120px;
+  width: 200px;
+  height: 120px;
 }
 
 /* #list {
@@ -48,41 +48,57 @@
 } */
 
 #crazyClock {
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    width: 100%;
-    height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  height: 10vh;
 }
 
 .wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 10px;
-    height: 100vh;
-
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 10px;
+  height: 100vh;
 }
 
 .el {
-    position: absolute;
-    opacity: 1;
-    width: 2px;
-    height: 1vh;
-    margin-top: -12vh;
-    margin-left:-6vh;
-    transform-origin: 50% 100%;
-    background: white;
+  position: absolute;
+  opacity: 1;
+  width: 2px;
+  height: 1vh;
+  margin-top: -12vh;
+  margin-left: -6vh;
+  transform-origin: 50% 100%;
+  background: white;
 }
 
 #welcome {
-    font-family: 'Nothing You Could Do'
+  font-family: "Nothing You Could Do";
 }
 
 #showItem {
-    /* margin-top: 100px;
+  /* margin-top: 100px;
     margin-bottom: 100px;
     margin-right: 150px; */
-    margin-left: 200px;
-  }
+  margin-left: 200px;
+}
+
+li:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba(200, 63, 56, 0.2);
+
+  -webkit-transform: rotateX(20deg);
+  -moz-transform: rotateX(20deg);
+  -ms-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+}
+
+li:active {
+  top: 0px;
+  /* box-shadow: 0px 0px 0px rgba( 200, 63, 56, 0.0 ); */
+  background: rgba(200, 60, 56, 0.2);
+}
+li { cursor: pointer; }
