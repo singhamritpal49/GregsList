@@ -86,7 +86,7 @@
   margin-left: 200px;
 }
 
-/* li:hover {
+li:hover {
   top: -10px;
   box-shadow: 0px 10px 10px rgba(200, 63, 56, 0.2);
 
@@ -101,4 +101,7 @@ li:active {
   box-shadow: 0px 0px 0px rgba( 200, 63, 56, 0.0 );
   background: rgba(200, 60, 56, 0.2);
 }
-li { cursor: pointer; } */
+li { cursor: pointer; }
+img {
+  border-radius: 8px;
+}

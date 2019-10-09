@@ -32,46 +32,46 @@ document.addEventListener("DOMContentLoaded", function () {
                     // console.log(userData)
                     const showDiv = document.getElementById("showItem")
                     showDiv.innerHTML =
-                    `
+                        `
                     <h4> Title: ${item.name} </h4>
                     <h6>Description: ${item.description} </h6>
                     <h6> Price: $${item.price} </h6>
                     <div> <img src="${item.image}" height="300" width="300" >   </div>
-                    <h3>Posted By: ${userData.name}</h3>
+                    <p>Posted By: ${userData.name}</p>
                     <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black buttonfx curtaindown" id="updateButton">Update</button>
-                    <button type="button" id="deleteButton">Delete</button> 
+                    <button type="button" id="deleteButton" class="w3-button w3-black buttonfx curtaindown">Delete</button> 
 
                     `
                 })
                 ///////////////DELETE///////////////
-                .then(function(){
-                //////////////delete on the database//////////////
+                .then(function () {
+                    //////////////delete on the database//////////////
                     const deleteButton = document.getElementById('deleteButton')
                     deleteButton.addEventListener('click', () => {
-                        fetch(`http://localhost:3000/items/${item.id}`,{
-                        method:'DELETE'
+                        fetch(`http://localhost:3000/items/${item.id}`, {
+                            method: 'DELETE'
                         })
-                        ////////////delete on the page////////////
-                        .then(res => res.json())
-                        .then(function(item){
-                            const theLi = document.getElementById(`item-${item.id}`)
-                            // console.log(theLi)
-                            theLi.remove()
-                            const showDiv = document.getElementById("showItem")
-                            showDiv.innerHTML = ""
-                            
-                        })
+                            ////////////delete on the page////////////
+                            .then(res => res.json())
+                            .then(function (item) {
+                                const theLi = document.getElementById(`item-${item.id}`)
+                                // console.log(theLi)
+                                theLi.remove()
+                                const showDiv = document.getElementById("showItem")
+                                showDiv.innerHTML = ""
+
+                            })
                     })
-                    
+
                 })
                 ///////////UPDATE//////////////////
-                .then(function(){
-                    
+                .then(function () {
+
                     const updateListForm = document.querySelector('.update-list-form')
                     // console.log(updateListForm)
                     updateListForm.addEventListener('submit', () => {
                         event.preventDefault()
-                        fetch(`http://localhost:3000/items/${item.id}`,{
+                        fetch(`http://localhost:3000/items/${item.id}`, {
                             method: 'PATCH',
                             headers: {
                                 'Accept': 'application/json',
@@ -87,11 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             })
                         })
                             .then(res => res.json())
-                            .then(function (x){
-                                        console.log(x)
-                                        const showDiv = document.getElementById("showItem")
-                                        showDiv.innerHTML =
-                                        `
+                            .then(function (x) {
+                                console.log(x)
+                                const showDiv = document.getElementById("showItem")
+                                showDiv.innerHTML =
+                                    `
                                         <h3>Item Title: ${x.name} </h3>
                                         <h3>Description: ${x.description} </h3>
                                         <h3> 💰Price: $${x.price} </h3>
@@ -100,14 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" id="updateButton">Update</button>
                                         <button type="button" id="deleteButton">Delete</button>
                                         `
-                                        const updateLi = document.getElementById(`item-${x.id}`)
-                                        console.log(updateLi)
-                                        
-                                        updateLi.innerText = `${x.name}`
-                            })    
-                        
+                                const updateLi = document.getElementById(`item-${x.id}`)
+                                console.log(updateLi)
+
+                                updateLi.innerText = `${x.name}`
+                            })
+
                     })
-                    })      
+                })
         }
     })
 })
@@ -133,10 +133,10 @@ addListForm.addEventListener('submit', () => {
         })
     })
         .then(res => res.json())
-        .then(function(item){
+        .then(function (item) {
             console.log(item)
-            ul.innerHTML += 
-            `
+            ul.innerHTML +=
+                `
             <li id="item-${item.id}" class="itemLi" data-id=${item.id}>${item.name}</li>
             `
 

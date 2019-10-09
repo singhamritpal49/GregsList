@@ -27,4 +27,11 @@ Item.create(name: 'Apple TV', description: 'open box', price: '99', image: "http
 category: "Technology",user_id: 1)
 Item.create(name: 'Leonardo DiCaprio Painting', description: 'A painting', price: '35', image: "https://cdn.shopify.com/s/files/1/1944/7205/products/invincible_large.jpg",
 category: "Art",user_id: 8)
+# Item.create(name: '', description: '', price: '', image: "",
+#     category: "", user_id: rand(1..7))
+    
+    
+    
+    
+
 
