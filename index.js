@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3>Posted By: ${userData.name}</h3>
                     <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black buttonfx curtaindown" id="updateButton">Update</button>
                     <button type="button" id="deleteButton">Delete</button> 
-
                     `
                 })
                 ///////////////DELETE///////////////
@@ -50,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     deleteButton.addEventListener('click', () => {
                         fetch(`http://localhost:3000/items/${item.id}`,{
                         method:'DELETE'
-                        })
+                        })  
+                        document
                         ////////////delete on the page////////////
                         .then(res => res.json())
                         .then(function(item){
